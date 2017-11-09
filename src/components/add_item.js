@@ -6,12 +6,12 @@ import {addItem} from '../actions';
 
 class AddItem extends Component {
 	renderInput({input, label, type, meta: {touched, error}}){
-		console.log('renderInput', props);
+		
 		return (
 			<div>
 				<label>{label}</label>
-				<input {...input} type={props.type}/>
-				<p className="red-text text-darken-2">{touched && error}</p>
+				<input {...input} type={type}/>
+				<p className="red-text text-darken-2">{touched && error}</p>	
 			</div>
 		)
 	}
@@ -28,7 +28,7 @@ class AddItem extends Component {
 		return(
 			<div>
 				<h1 className="center-align">Add New To Do Item</h1>
-				<div className="right-align"
+				<div className="right-align">
 					<Link className="btn red darken-2" to="/">Go Back</Link>
 				</div>
 				<form onSubmit={handleSubmit((vals) => this.submitItem(vals))}>
