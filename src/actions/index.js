@@ -1,9 +1,8 @@
 import types from './types';
 import axios from 'axios';
 
-
 const BASE_URL = 'http://api.reactprototypes.com/todos';
-const API_KEY = '?key=fluffybunnies';
+const API_KEY = '?key=TM87Master';
 
 export function getAll() {
 	const request = axios.get(BASE_URL + API_KEY);
