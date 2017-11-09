@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {getSingle, toggleComplete} from '../actions';
+import {Link, Route} from 'react-router-dom';
+import TodoList from './todo_list';
+
 
 class SingleItem extends Component {
 	componentDidMount(){
@@ -17,12 +20,12 @@ class SingleItem extends Component {
 		}
 		return(
 			<div>
-				<button>Go Back</button>
+				<Link className="btn red" to="/">Go Back</Link>
 				<h3>{single.title}</h3>
 				<p>Details: {single.details}</p>
 				<p>Created By: {single.userId}</p>
 				<p>Status: {single.complete ? 'Item Complete' : 'Item Incomplete'}</p>
-				<button onClick={() => this.toggleComplete()} className={`btn ${single.complete ? 'red' : 'green'}`}>{`${single.complete ? 'Restore' : 'Complete'}`}</button>
+				<button onClick={() => this.toggleComplete()} className={`btn ${single.complete ? 'purple' : 'green'}`}>{`${single.complete ? 'Restore' : 'Complete'}`}</button>
 			</div>
 		)
 	}
