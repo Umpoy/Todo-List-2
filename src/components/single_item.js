@@ -13,6 +13,10 @@ class SingleItem extends Component {
 		console.log('Toggle Complete:', this.props.single._id);
 		this.props.toggleComplete(this.props.single._id);
 	}
+	delete(){
+		console.log("Delete: ", this.props);
+		this.props.delete(this.props.single._id);
+	}
 	render(){
 		const {single} = this.props;
 		if(!single){
@@ -26,6 +30,7 @@ class SingleItem extends Component {
 				<p>Created By: {single.userId}</p>
 				<p>Status: {single.complete ? 'Item Complete' : 'Item Incomplete'}</p>
 				<button onClick={() => this.toggleComplete()} className={`btn ${single.complete ? 'purple' : 'green'}`}>{`${single.complete ? 'Restore' : 'Complete'}`}</button>
+				<button onClick={() => this.delete()} className="btn black">Delete Item</button>
 			</div>
 		)
 	}
